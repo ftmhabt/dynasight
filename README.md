@@ -1,3 +1,38 @@
+## Simple Real-time Project with React, TypeScript, and Twitter Search API
+
+**Components:**
+
+1. **SearchInput Component:** This component allows users to enter keywords or hashtags to track in the real-time sentiment analysis.
+    * It should have an input field for user input and a button to trigger the search functionality.
+    * You can use React state to manage the current search term.
+
+2. **TweetList Component:** This component displays a list of recently collected tweets related to the search term.
+    * It will receive an array of tweets as props from the parent component.
+    * Each tweet item should display the tweet text, author (username), and ideally, a timestamp.
+
+3. **SentimentChart Component:** This component visualizes the overall sentiment of the tweets over time.
+    * It will utilize a library like Chart.js or React-Vis to create a line chart.
+    * The chart should display the sentiment score (positive, negative, neutral) on the Y-axis and time on the X-axis.
+    * You can maintain an internal state variable to store sentiment data points for visualization.
+
+**Data Fetching and Sentiment Analysis:**
+
+1. **Search Functionality:** When the user submits a search term:
+    * Use the `twitter` library to initiate a real-time stream of tweets matching the search term.
+    * Consider using techniques like `interval` or `setTimeout` functions to periodically fetch new tweets at a defined interval (e.g., every few seconds).
+
+2. **Sentiment Analysis (Frontend or Optional Backend):**
+    * For a simpler approach, you can explore pre-trained sentiment analysis libraries like VADER or TextBlob directly on the frontend.
+    * These libraries often provide a function that takes tweet text as input and returns a sentiment score (e.g., negative, neutral, positive).
+    * Alternatively, if you prefer backend integration, you can set up a Node.js server with an API endpoint that receives tweet text and returns the sentiment score. This approach offers more flexibility but requires additional backend development setup.
+
+3. **Data Storage and Visualization:**
+    * Store the retrieved tweets and their corresponding sentiment scores in an appropriate data structure (e.g., array of objects) within your React component state.
+    * Update the `TweetList` component with the latest tweets as they arrive.
+    * Update the `SentimentChart` component with new sentiment data points as new tweets are processed.
+    * The chart should dynamically update to reflect the changing sentiment over time.
+
+
 component structure:
 
 **1. Data Source Component:**
